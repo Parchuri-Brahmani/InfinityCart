@@ -1,0 +1,856 @@
+/* --- 1. RESET & FONTS --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --primary: #1ab394; /* PressMart Green */
+    --primary-dark: #148e75;
+    --text-dark: #222;
+    --text-gray: #666;
+    --border-color: #eee;
+    --bg-light: #f7f7f7;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    background: #fff;
+    line-height: 1.6;
+}
+
+.container {
+    width: 95%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* --- 2. TOP UTILITY BAR --- */
+.top-bar {
+    font-size: 13px;
+    padding: 12px 0; /* Spacing penchanu */
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-gray);
+    background: #fff;
+}
+
+.top-links a {
+    text-decoration: none;
+    color: var(--text-gray);
+    margin-left: 15px;
+    transition: 0.3s;
+}
+
+.top-links a:hover {
+    color: var(--primary);
+}
+
+/* --- 3. MAIN HEADER & SEARCH --- */
+.header-main {
+    padding: 30px 0; /* More white space for premium look */
+}
+
+.logo {
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--text-dark);
+}
+
+.logo span {
+    color: var(--primary);
+}
+
+/* style.css lo search bar section update cheyi */
+.search-bar form {
+    display: flex;
+    width: 100%;
+    border: 2px solid #c49353; /* PressMart Green Border */
+    border-radius: 50px; /* Rounded look */
+    overflow: hidden;
+    background: #fff;
+}
+
+.search-bar input {
+    flex: 1;
+    border: none;
+    padding: 12px 20px;
+    outline: none;
+    font-size: 16px;
+}
+
+.search-bar select {
+    border: none;
+    border-left: 1px solid #eee;
+    padding: 0 15px;
+    outline: none;
+    background: #f9f9f9;
+    cursor: pointer;
+}
+
+.search-bar button {
+    background: #c49353;
+    color: white;
+    border: none;
+    padding: 0 25px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.search-bar button:hover {
+    background: #c49353;
+}
+
+/* --- Redesigned Minimal Header Icons --- */
+.header-icons {
+    display: flex;
+    gap: 25px; 
+    align-items: center;
+}
+
+.h-icon {
+    position: relative;
+    font-size: 24px; 
+    color: #222;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.h-icon:hover {
+    color: #1ab394;
+    transform: translateY(-3px);
+}
+
+/* Redesigned Floating Count Badges */
+.h-icon .count {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    background: #1ab394;
+    color: white;
+    font-size: 10px;
+    padding: 2px 6px;
+    border-radius: 50%;
+    font-weight: bold;
+    border: 2px solid #fff; 
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 18px;
+    height: 18px;
+}
+
+/* Icon kindha unna text ni hide cheyadaniki */
+.h-icon span:not(.count) {
+    display: none;
+}
+
+/* --- 4. GREEN NAVIGATION BAR --- */
+.nav-green {
+    background: var(--primary);
+    color: white;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.cat-dropdown {
+    background: var(--primary-dark);
+    padding: 15px 35px; /* Sidebar width matching */
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+}
+
+.main-nav {
+    list-style: none;
+    display: flex;
+}
+
+.main-nav li a {
+    color: white;
+    text-decoration: none;
+    padding: 15px 25px;
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.main-nav li a:hover, .main-nav li a.active {
+    background: rgba(0,0,0,0.15);
+}
+
+/* --- 5. HERO SECTION --- */
+/* Hero Slider motham fill ayyeలా modifications */
+.hero-slider {
+    margin-top: 20px;
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+    background: #111; /* Dark tech image ki suit avthundhi */
+}
+
+/* --- Redesigned Hero Inner & Glass Effect --- */
+.hero-inner {
+    height: 450px; /* Height penchanu premium feel kosam */
+    padding: 0; 
+    position: relative;
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.hero-text {
+    position: absolute;
+    left: 8%; /* Minimalist alignment */
+    z-index: 10;
+    max-width: 500px;
+    text-align: left;
+    background: rgba(255, 255, 255, 0.15); /* Glass effect transparency */
+    backdrop-filter: blur(15px); /* Background blur chesthundhi */
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+.hero-text h4 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1ab394; /* Theme Teal Green */
+    margin-bottom: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.hero-text h1 {
+    font-family: 'Playfair Display', serif !important; /* Logo font tho sync ayyindhi */
+    font-size: 55px;
+    font-weight: 800;
+    color: #222;
+    line-height: 1.1;
+    margin-bottom: 15px;
+}
+
+.hero-text p {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 25px;
+}
+
+/* Modern Pill-Shaped Button */
+.btn-dark, .hero-text .btn-primary {
+    display: inline-block;
+    background: #222;
+    color: #fff !important;
+    padding: 15px 45px;
+    border-radius: 50px; /* Fully rounded rounded shape */
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: 0.4s;
+    text-decoration: none;
+    border: none;
+}
+/* Fashion Slide kosam Left Side Text */
+.fashion-text {
+    position: absolute;
+    left: 8%; /* Left ki move cheshanu */
+    right: auto;
+    text-align: left;
+    z-index: 10;
+    max-width: 550px;
+    background: rgba(255, 255, 255, 0.15); /* Light glass effect */
+    backdrop-filter: blur(5px); /* Background blur chesthundhi */
+    padding: 30px;
+    border-radius: 15px;
+}
+
+/* Text colors highlight avvadaniki */
+.fashion-text h1 {
+    color: #222; /* Dark color for better contrast on light bg */
+    font-size: 65px;
+    font-weight: 800;
+}
+
+.fashion-text h4 {
+    color: #1ab394;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+/* Button ni inka neat ga cheyadam */
+.hero-text .btn-primary {
+    display: inline-block;
+    background: var(--primary);
+    color: #fff;
+    padding: 15px 45px;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 16px;
+    text-transform: uppercase;
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+/* Background image motham fill avvadaniki idhi mukhyaమైనది */
+.hero-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.hero-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ee property valla image cut avvakunda motham area fill chesthundhi */
+    opacity: 0.7; /* Text inka clear ga kanipisthundhi */
+}
+
+.swiper-button-next, .swiper-button-prev {
+    color: #1ab394 !important;
+}
+
+/* --- 6. CATEGORY CIRCLES --- */
+.categories-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.cat-circle .img-box {
+    width: 100px; /* Reference pic lo size matches */
+    height: 100px;
+    border-radius: 50%;
+    background: #f4f4f4;
+    margin: 0 auto 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.4s ease;
+    border: 1px solid var(--border-color);
+}
+
+.cat-circle:hover .img-box {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    background: #fff;
+    border-color: var(--primary);
+}
+
+.cat-circle img {
+    width: 55px;
+}
+
+.cat-circle p {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+/* --- 7. PRODUCT CARDS --- */
+.section-title {
+    border-bottom: 2px solid var(--border-color);
+    margin-bottom: 35px;
+    padding-bottom: 15px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 25px;
+}
+
+/* --- Redesigned Modern Product Grid & Cards --- */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); /* Resizable grid */
+    gap: 30px; /* Space penchanu neatness kosam */
+    margin-top: 30px;
+}
+
+.p-card {
+    background: #fff;
+    border: none; /* Border theesesi soft look ichamu */
+    border-radius: 20px; /* Smooth rounded corners */
+    padding: 20px;
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.03); /* Initial light shadow */
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* Infinity Hover Animation */
+.p-card:hover {
+    transform: translateY(-10px); /* Paiki lift avthundhi */
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08); /* Deep hover shadow */
+}
+
+.tag-sale {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: #27ae60;
+    color: white;
+    font-size: 11px;
+    padding: 3px 10px;
+    font-weight: 700;
+    z-index: 1;
+}
+
+.p-img {
+    height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.p-img img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.p-info .p-cat {
+    font-size: 12px;
+    color: #aaa;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.p-info h4 {
+    font-size: 15px;
+    margin-bottom: 10px;
+    color: var(--text-dark);
+    height: 42px;
+    overflow: hidden;
+    line-height: 1.4;
+}
+
+.rating {
+    color: #ffb400;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+.price {
+    color: var(--primary);
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.select-opt {
+    display: block;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #888;
+    font-size: 13px;
+    font-weight: 600;
+    border-top: 1px solid var(--border-color);
+    padding-top: 12px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.select-opt:hover {
+    color: var(--primary);
+}
+
+/* --- 8. CART & CHECKOUT PAGES --- */
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 25px;
+    padding: 40px 0;
+}
+
+.product {
+    background: #fff;
+    padding: 20px;
+    border: 1px solid var(--border-color);
+    text-align: center;
+}
+/* Navigation Hover Effects */
+.main-nav li {
+    position: relative;
+    padding: 0 15px;
+}
+
+.main-nav li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 14px;
+    padding: 15px 0;
+    display: inline-block;
+}
+
+/* Sub-menu Styling */
+.sub-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    width: 200px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    display: none; /* Default ga hide chesthunnam */
+    z-index: 1000;
+    border-top: 3px solid #1ab394;
+}
+
+.has-children:hover .sub-menu {
+    display: block; /* Hover chesinappudu chupisthundhi */
+}
+
+.sub-menu li {
+    padding: 0;
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.sub-menu li a {
+    color: #333 !important;
+    padding: 12px 20px;
+    display: block;
+    text-transform: capitalize;
+}
+
+.sub-menu li a:hover {
+    background: #f9f9f9;
+    color: #1ab394 !important;
+}
+/* Navigation Hover & Dropdown */
+.main-nav li { position: relative; }
+
+.main-nav li .sub-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #fff;
+    min-width: 180px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    display: none;
+    z-index: 999;
+    border-top: 3px solid #1ab394;
+}
+
+.main-nav li:hover .sub-menu { display: block; animation: fadeIn 0.3s; }
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media print {
+    .btn, #print-btn-id {
+        display: none;
+    }
+}
+/* --- Root Variables & Reset --- */
+:root {
+    --primary: #1ab394;
+    --primary-dark: #15967d;
+    --dark: #222;
+    --light-bg: #f8f9fa;
+    --text-muted: #777;
+    --text-main: #333;
+    --white: #ffffff;
+    --shadow: 0 10px 40px rgba(0,0,0,0.06);
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; color: var(--text-main); line-height: 1.6; overflow-x: hidden; background: #fff; }
+.container { max-width: 1240px; margin: 0 auto; padding: 0 20px; }
+.flex-between { display: flex; justify-content: space-between; align-items: center; }
+.flex-start { display: flex; align-items: center; gap: 30px; }
+.text-center { text-align: center; }
+
+/* --- Top Bar --- */
+.top-bar { background: #f4f4f4; padding: 12px 0; font-size: 13px; border-bottom: 1px solid #eee; }
+.contact-info span { margin-right: 20px; color: var(--text-muted); }
+.contact-info i { color: var(--primary); margin-right: 5px; }
+.top-links a { text-decoration: none; color: var(--text-main); font-weight: 600; margin-left: 15px; transition: var(--transition); }
+.top-links a:hover { color: var(--primary); }
+
+
+/* --- Navigation --- */
+.nav-main { background: var(--primary); color: white; }
+.cat-menu { background: var(--primary-dark); padding: 18px 35px; font-weight: 800; cursor: pointer; position: relative; font-size: 14px; letter-spacing: 0.5px; }
+.cat-dropdown { position: absolute; top: 100%; left: 0; width: 100%; background: var(--white); box-shadow: var(--shadow); display: none; z-index: 100; border: 1px solid #eee; }
+.cat-menu:hover .cat-dropdown { display: block; }
+.cat-dropdown a { display: block; padding: 14px 25px; color: var(--text-main); text-decoration: none; border-bottom: 1px solid #f5f5f5; font-size: 14px; transition: var(--transition); }
+.cat-dropdown a:hover { background: #f9f9f9; color: var(--primary); padding-left: 30px; }
+
+.nav-links { display: flex; list-style: none; }
+.nav-links a { color: white; text-decoration: none; padding: 18px 25px; display: block; font-weight: 700; text-transform: uppercase; font-size: 13px; letter-spacing: 1px; transition: var(--transition); }
+.nav-links a.active, .nav-links a:hover { background: rgba(0,0,0,0.08); }
+
+/* --- Hero Section --- */
+.hero-slider { background: #f0fdfa; padding: 80px 0; overflow: hidden; }
+.hero-content { flex: 1.2; }
+.hero-content .badge { background: var(--primary); color: white; padding: 6px 15px; border-radius: 20px; font-size: 12px; font-weight: 800; text-transform: uppercase; }
+.hero-content h1 { font-size: 68px; margin: 20px 0; line-height: 1.1; font-weight: 900; color: var(--dark); }
+.hero-content h1 span { color: var(--primary); }
+.hero-content p { font-size: 18px; color: #666; max-width: 520px; margin-bottom: 45px; }
+
+.btn-primary { background: var(--dark); color: white; padding: 18px 45px; text-decoration: none; border-radius: 5px; font-weight: 800; display: inline-flex; align-items: center; gap: 10px; transition: var(--transition); }
+.btn-primary:hover { background: var(--primary); transform: translateY(-3px); }
+.btn-outline { margin-left: 15px; border: 2px solid var(--dark); padding: 16px 40px; text-decoration: none; color: var(--dark); border-radius: 5px; font-weight: 800; transition: var(--transition); }
+.btn-outline:hover { background: var(--dark); color: white; }
+
+.hero-image img { max-width: 4000px; border-radius: 30px; box-shadow: 20px 20px 60px rgba(0,0,0,0.1); }
+
+/* --- Trust Badges --- */
+.trust-badges { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; margin: 60px auto; background: var(--white); padding: 40px; border-radius: 15px; box-shadow: var(--shadow); border: 1px solid #eee; }
+.badge-item { display: flex; align-items: center; gap: 20px; }
+.badge-item i { font-size: 38px; color: var(--primary); }
+.badge-item h4 { margin: 0; font-size: 17px; font-weight: 800; color: var(--dark); }
+.badge-item p { margin: 3px 0 0; font-size: 13px; color: var(--text-muted); }
+
+/* Product Grid & Card Styles */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.p-card {
+    background: #fff;
+    border: 1px solid #f0f0f0;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* All cards same height */
+}
+
+.p-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+}
+
+.p-img {
+    width: 100%;
+    height: 220px; /* Fixed height for all images */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fdfdfd;
+    padding: 15px;
+}
+
+.p-img img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* Aspect ratio maintain chesthundhi */
+}
+
+.p-info {
+    padding: 15px;
+    text-align: center;
+    flex-grow: 1; /* Content pushes button to bottom */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.p-info h4 {
+    font-size: 15px;
+    margin: 10px 0;
+    color: #333;
+    height: 40px; /* Limit title to 2 lines */
+    overflow: hidden;
+}
+
+.price {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1ab394;
+    margin-bottom: 15px;
+}
+
+.select-opt {
+    background: #222;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.select-opt:hover {
+    background: #1ab394;
+}
+
+/* --- Final Step: Professional Glass-Dark Footer --- */
+.newsletter { 
+    background: #1ab394; 
+    padding: 80px 0; 
+    color: white; 
+    text-align: center;
+}
+
+.news-form {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.news-form input {
+    padding: 15px 25px;
+    border-radius: 50px 0 0 50px;
+    border: none;
+    width: 350px;
+    outline: none;
+}
+
+.news-form button {
+    background: #222;
+    color: white;
+    border: none;
+    padding: 15px 35px;
+    border-radius: 0 50px 50px 0;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.footer-dark { 
+    background: #111 !important; 
+    color: #fff; 
+    padding: 80px 0 20px; 
+}
+
+.footer-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+    gap: 50px; 
+    padding-bottom: 50px; 
+}
+
+.f-col h4 { 
+    font-family: 'Playfair Display', serif; 
+    color: white; 
+    font-size: 20px; 
+    margin-bottom: 25px; 
+}
+
+.f-col a { 
+    color: #888; 
+    text-decoration: none; 
+    display: block; 
+    margin-bottom: 12px; 
+    transition: 0.3s; 
+}
+
+.f-col a:hover { 
+    color: #1ab394; 
+    padding-left: 5px; 
+}
+
+/* style.css lo add cheyi */
+.hero-slider {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-slider .swiper-button-next,
+.hero-slider .swiper-button-prev {
+    color: #1ab394; /* PressMart Theme Color */
+    opacity: 0.5;
+    transition: 0.3s;
+}
+
+.hero-slider:hover .swiper-button-next,
+.hero-slider:hover .swiper-button-prev {
+    opacity: 1;
+}
+
+/* --- CHATBOT STYLING --- */
+.chat-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #1ab394; /* Mee theme color */
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+
+.chat-window {
+    position: fixed;
+    bottom: 100px;
+    right: 30px;
+    width: 320px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+    display: none; /* Default ga hide chesthunnam */
+    flex-direction: column;
+    z-index: 1000;
+    overflow: hidden;
+    border: 1px solid #eee;
+}
+
+.chat-header {
+    background: #1ab394;
+    color: white;
+    padding: 15px;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+}
+
+.chat-body {
+    height: 300px;
+    padding: 15px;
+    overflow-y: auto;
+    font-size: 14px;
+}
+
+.chat-footer {
+    padding: 10px;
+    border-top: 1px solid #eee;
+    display: flex;
+}
+
+.chat-footer input {
+    flex: 1;
+    border: 1px solid #ddd;
+    padding: 8px;
+    border-radius: 4px;
+    outline: none;
+}
+
+.bot-msg { background: #f1f1f1; padding: 8px; border-radius: 8px; margin-bottom: 10px; align-self: flex-start; max-width: 80%; }
+.user-msg { background: #1ab394; color: white; padding: 8px; border-radius: 8px; margin-bottom: 10px; align-self: flex-end; margin-left: auto; max-width: 80%; }
